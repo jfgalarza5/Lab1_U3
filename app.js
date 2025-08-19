@@ -82,7 +82,7 @@ function renderNotes() {
 window.addEventListener('load', async () => {
     await Notification.requestPermission();
     if('serviceWorker' in navigator) {
-        const res = await navigator.serviceWorker.register('/sw.js');
+        const res = await navigator.serviceWorker.register('./sw.js');
         if(res){
             const ready = await navigator.serviceWorker.ready;
             ready.showNotification("Notes",{
