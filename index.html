@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notas PWA</title>
+
+  <!-- MDL -->
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#3f51b5">
+</head>
+<body>
+
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-color--indigo-500">
+      <div class="mdl-layout__header-row">
+        <img src="./icons/icon-144x144.png" alt="" class="icon">
+        <span class="mdl-layout-title">Mis Notas</span>
+      </div>
+    </header>
+
+    <main class="mdl-layout__content">
+      <div class="page-content">
+        <!-- Lista de notas -->
+        <div id="notesList" class="notes-grid"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- FAB flotante (solo escritorio) -->
+  <button id="fabAdd" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored fab-desktop">
+    <i class="material-icons">add</i>
+  </button>
+
+  <!-- Menú inferior (solo movil) -->
+  <div class="bottom-nav mdl-color--white">
+    <button id="bottomAdd" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+      <i class="material-icons">add</i>
+    </button>
+  </div>
+
+  <!-- Modal para nueva nota -->
+  <dialog id="noteDialog" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Nueva Nota</h4>
+    <div class="mdl-dialog__content">
+      <form id="noteForm">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="noteTitle" required>
+          <label class="mdl-textfield__label" for="noteTitle">Título...</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <textarea class="mdl-textfield__input" rows="3" id="noteContent" required></textarea>
+          <label class="mdl-textfield__label" for="noteContent">Contenido...</label>
+        </div>
+      </form>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button type="submit" form="noteForm" class="mdl-button mdl-button--colored">Guardar</button>
+      <button type="button" class="mdl-button close">Cancelar</button>
+    </div>
+  </dialog>
+
+  <script src="./app.js"></script>
+</body>
+</html>
