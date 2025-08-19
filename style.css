@@ -1,0 +1,74 @@
+body {
+  background: #f5f5f5;
+}
+
+.page-content {
+  padding: 20px;
+  max-width: 90%;
+  margin: auto;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.mdl-card {
+  width: 100%;
+}
+
+.mdl-card__supporting-text {
+  white-space: pre-line;
+}
+
+/* FAB solo en escritorio */
+.fab-desktop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+}
+
+/* Menú inferior solo en móvil */
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Responsivo */
+@media (min-width: 768px) {
+  .fab-desktop { display: inline-flex; }
+  .bottom-nav { display: none; }
+}
+
+@media (max-width: 767px) {
+  .fab-desktop { display: none; }
+  .bottom-nav { display: flex; }
+}
+
+/* Modal MDL */
+.mdl-dialog {
+  width: 90%;
+  max-width: 500px;
+}
+
+.mdl-layout__header-row .icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.mdl-layout__header-row {
+  padding-left: 20px !important;
+}
